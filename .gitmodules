@@ -7,3 +7,6 @@
 [submodule "plugins/yasnippet"]
 	path = plugins/yasnippet
 	url = https://github.com/capitaomorte/yasnippet.git
+[submodule "plugins/magit"]
+	path = plugins/magit
+	url = git://github.com/magit/magit.git
