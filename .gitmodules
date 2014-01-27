@@ -4,3 +4,6 @@
 [submodule "plugins/multiple-cursors.el"]
 	path = plugins/multiple-cursors.el
 	url = https://github.com/magnars/multiple-cursors.el.git
+[submodule "plugins/yasnippet"]
+	path = plugins/yasnippet
+	url = https://github.com/capitaomorte/yasnippet.git
