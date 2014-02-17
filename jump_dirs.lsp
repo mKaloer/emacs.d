@@ -1,6 +1,6 @@
 (
-     ("studie" . "~/Documents/Studie/SW3")
-     ("sw3" . "~/Documents/Studie/SW3/AAU-P3/rapport")
+     ("studie" . "~/Documents/Studie/SW4")
+     ("sw4" . "~/Documents/Studie/SW4/P4")
      ("meatball" . "~/Documents/Projects/Project-Meatball/")
      ("rpi" . "/scpc:pi@akaloer.mooo.com#2280:/home/pi")
 )

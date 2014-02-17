@@ -26,7 +26,23 @@
 (load "~/.emacs.d/ruby.el")
 
 ;; LaTeX
+;; Add texbin path
+(getenv "PATH")
+ (setenv "PATH"
+(concat
+ "/usr/texbin" ":"
+
+(getenv "PATH")))
+(require 'tex)
 ;; LaTeX word wrap
 (add-hook 'LaTeX-mode-hook 'visual-line-mode)
 ;; Spell check
 (add-hook 'LaTeX-mode-hook 'flyspell-mode)
+(add-hook 'LaTeX-mode-hook 'LaTeX-math-mode)
+
+(setq TeX-parse-self t)
+(setq TeX-auto-save nil)
+(setq-default TeX-master nil)
+;; Use pdflatex
+(setq TeX-PDF-mode t)
+(setq latex-run-command "pdflatex")

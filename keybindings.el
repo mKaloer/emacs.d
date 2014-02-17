@@ -35,3 +35,10 @@
 (add-hook 'org-shiftleft-final-hook 'windmove-left)
 (add-hook 'org-shiftdown-final-hook 'windmove-down)
 (add-hook 'org-shiftright-final-hook 'windmove-right)
+
+;; Compile in c/c++
+(add-hook 'c-mode-common-hook
+	  (lambda () (define-key c-mode-base-map (kbd "C-c C-f") 'compile)))
+
+;; Open Shell
+(global-set-key (kbd "C-x !") 'shell)

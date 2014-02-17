@@ -48,3 +48,9 @@
     (if (string-match "^\\s-+$" (buffer-substring (point-at-bol) (point)))
         (kill-region (point-at-bol) (point))
       (backward-kill-word 1))))
+
+(defun create-tags (dir-name)
+     "Create tags file."
+     (interactive "DDirectory: ")
+     (eshell-command 
+      (format "find %s -type f -name \"*.[ch]\" | etags -" dir-name)))
