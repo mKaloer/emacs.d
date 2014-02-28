@@ -46,3 +46,6 @@
 ;; Use pdflatex
 (setq TeX-PDF-mode t)
 (setq latex-run-command "pdflatex")
+
+;; Haskell
+(add-hook 'haskell-mode-hook 'turn-on-haskell-simple-indent)
