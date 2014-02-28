@@ -41,4 +41,7 @@
 	  (lambda () (define-key c-mode-base-map (kbd "C-c C-f") 'compile)))
 
 ;; Open Shell
-(global-set-key (kbd "C-x !") 'shell)
+(global-set-key (kbd "C-x !") 'eshell)
+
+;; Magit status
+(global-set-key (kbd "C-x g") 'magit-status)
