@@ -5,6 +5,8 @@
 (global-linum-mode t)
 (set-fringe-mode 0)
 
+(set-default-font "SourceCodePro 12")
+
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -24,3 +26,5 @@
  
 ;; Default theme
 (load-theme 'base16-default)
+
+(setq linum-format " %d  ")

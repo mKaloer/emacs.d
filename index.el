@@ -54,7 +54,7 @@
     (forget-current-tags-table)
     (visit-tags-table dir)))
 
-(defun index-current-project ()
+(defun index-current-project (&optional silent)
   "Creates a TAGS file for the project that contains the
    currently opened file.
 
@@ -69,14 +69,14 @@
           (forget-current-tags-table)
           (shell-command index-cmd)
           (focus-project-containing-file dir)
-          (message "Done indexing project"))
-      (message "No .gitignore file found."))))
+          (unless silent (message "Done indexing project")))
+      (unless silent (message "No .gitignore file found.")))))
 
 ;;
 ;; Hooks
 ;;
 
-(add-hook 'after-save-hook 'index-current-project)
+;; (add-hook 'after-save-hook (lambda () (index-current-project t)))
 
 ;;
 ;; Navigation

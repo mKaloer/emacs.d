@@ -2,10 +2,9 @@
 
 (defun tags-complete-tag (string predicate what)
      (save-excursion
-     ;; If we need to ask for the tag table, allow that.
-     (if (eq what t)
-	(all-completions string (tags-completion-table) predicate)
-      (try-completion string (tags-completion-table) predicate))))
+     ;; Do not ask for tag table even though it is needed.
+     (if (eq what nil)
+	(all-completions string (tags-completion-table) predicate))))
 
 (defun he-tag-beg ()
   (let ((p
@@ -30,3 +29,9 @@
     (setq he-expand-list (cdr he-expand-list))
     t))
 (add-to-list 'hippie-expand-try-functions-list 'try-expand-tag) 
+
+;; Expand file-name
+ (fset 'my-complete-file-name
+        (make-hippie-expand-function '(try-complete-file-name-partially
+                                       try-complete-file-name)))
+

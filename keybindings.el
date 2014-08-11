@@ -45,3 +45,25 @@
 
 ;; Magit status
 (global-set-key (kbd "C-x g") 'magit-status)
+
+(global-set-key (kbd "C-x _") 'dirtree)
+
+;; Move paragraph back
+(global-set-key (kbd "M-p") (lambda() (interactive)
+			      (backward-paragraph)))
+
+;; Move paragraph forward
+(global-set-key (kbd "M-n") (lambda() (interactive)
+			      (forward-paragraph)))
+
+
+;; Easy window resizing
+(global-set-key (kbd "M-<left>") 'shrink-window-horizontally)
+(global-set-key (kbd "M-<right>") 'enlarge-window-horizontally)
+(global-set-key (kbd "M-<down>") 'shrink-window)
+(global-set-key (kbd "M-<up>") 'enlarge-window)
+
+;; Auto-completion
+(ac-set-trigger-key "TAB")
+(define-key ac-complete-mode-map "\C-n" 'ac-next)
+(define-key ac-complete-mode-map "\C-p" 'ac-previous)

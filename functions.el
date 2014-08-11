@@ -49,8 +49,14 @@
         (kill-region (point-at-bol) (point))
       (backward-kill-word 1))))
 
-(defun create-tags (dir-name)
+(defun create-tags (dir-name file-extension)
      "Create tags file."
-     (interactive "DDirectory: ")
+     (interactive "DDirectory: \nsEnter file extension: ")
      (eshell-command 
-      (format "find %s -type f -name \"*.[ch]\" | etags -" dir-name)))
+      (format "find %s -type f -name \"*.%s\" | etags -" dir-name file-extension)))
+
+(defun create-tags-append (dir-name file-extension)
+     "Append to an existing tags file."
+     (interactive "DDirectory: \nsEnter file extension: ")
+     (eshell-command 
+      (format "find %s -type f -name \"*.%s\" | etags -a -" dir-name file-extension)))
