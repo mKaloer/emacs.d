@@ -49,7 +49,13 @@
 (require 'yasnippet)
 (yas-global-mode 1)
 (setq yas-snippet-dirs (append yas-snippet-dirs '("~/.emacs.d/snippets")))
-(setq yas-prompt-functions '(yas-dropdown-prompt yas-ido-prompt))
+(require 'dropdown-list)
+(setq yas-prompt-functions
+      '(yas-dropdown-prompt
+        yas-ido-prompt
+        yas-x-prompt
+        yas-completing-prompt
+        yas-no-prompt))
 
 
 (setq password-cache-expiry nil)
