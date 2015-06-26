@@ -1,0 +1,4 @@
+#name : ANGLE BRACKETS
+#condition : (string-match "/Users/madskaloer/Documents/Studie/SW5/CC/notes/*" (buffer-file-name))
+# --
+\langle{}$1\rangle{}

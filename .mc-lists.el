@@ -3,13 +3,26 @@
 
 (setq mc/cmds-to-run-for-all
       '(
+	LaTeX-babel-insert-hyphen
+	LaTeX-insert-left-brace
+	TeX-insert-backslash
+	TeX-insert-sub-or-superscript
 	c-electric-delete-forward
+	end-of-visual-line
+	indent-for-tab-command
 	kill-region
 	org-delete-char
 	org-self-insert-command
 	ruby-electric-matching-char
+	sp--self-insert-command
+	toggle-input-method
 	))
 
 (setq mc/cmds-to-run-once
       '(
+	helm-M-x
+	helm-confirm-and-exit-minibuffer
+	indent-region
+	makefile-runner
+	my-backward-kill-word
 	))

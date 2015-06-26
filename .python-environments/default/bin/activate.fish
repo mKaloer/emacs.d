@@ -32,7 +32,7 @@ end
 # unset irrelevant variables
 deactivate nondestructive
 
-set -gx VIRTUAL_ENV "/Users/madskaloer/.emacs.d/.python-environments/default"
+set -gx VIRTUAL_ENV "/Users/mkaloer/.emacs.d/.python-environments/default"
 
 set -gx _OLD_VIRTUAL_PATH $PATH
 set -gx PATH "$VIRTUAL_ENV/bin" $PATH
