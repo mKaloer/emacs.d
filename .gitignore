@@ -36,3 +36,14 @@ Icon
 # Files that might appear on external disk
 .Spotlight-V100
 .Trashes
+
+ac-comphist.dat
+ido.last
+places
+projectile-bookmarks.eld
+recentf
+request/curl-cookie-jar
+newsticker/
+.cask/
+.sx/
+.python-environments/

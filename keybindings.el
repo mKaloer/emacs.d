@@ -170,3 +170,4 @@
 
 ;; Ace jump
 (define-key global-map (kbd "C-c SPC") 'ace-jump-mode)
+(global-set-key (kbd "C-c C-s") 'helm-swoop)
