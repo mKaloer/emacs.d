@@ -64,7 +64,6 @@
 (load "~/.emacs.d/theme.el")
 (load "~/.emacs.d/languages.el")
 (load "~/.emacs.d/functions.el")
-(load "~/.emacs.d/index.el")
 (load "~/.emacs.d/auto-complete.el")
 (load "~/.emacs.d/keybindings.el")
 (load "~/.emacs.d/helm-config.el")
