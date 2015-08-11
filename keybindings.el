@@ -16,7 +16,7 @@
 (define-key input-decode-map "\e[1;9D" [M-left])
 
 ;; Hippie-expand on M-S-<spc>
-(global-set-key "\M-\S-SPC" 'hippie-expand)
+(global-set-key (kbd "M-SPC") 'hippie-expand)
 
 ;; Recent files
 (global-set-key "\C-x\ \C-r" 'helm-recentf)
