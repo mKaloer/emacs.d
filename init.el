@@ -29,6 +29,9 @@
 (load-file "~/.emacs.d/plugins/jumping.el")
 (setq jump-places (jmp-file-read "~/.emacs.d/jump_dirs.lsp"))
 
+;; Find-line-in-buffer
+(load-file "~/.emacs.d/plugins/find-line-in-buffer.el")
+
 ;; Spell checker
 (autoload 'flyspell-mode "flyspell" "On-the-fly spelling checker." t)
 (setq flyspell-issue-welcome-flag nil) ;; fix flyspell problem
