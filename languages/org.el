@@ -44,6 +44,10 @@
 (setq org-capture-templates
       '(("t" "Todo" entry (file+headline "~/org/todo.org" "Tasks")
 	 "* TODO %?\n %a")
+	("w" "Todo (Work)" entry (file+headline "~/org/work.org" "Tasks")
+	 "* TODO %?\n  %^T")
+	("W" "Todo (Work, scheduled)" entry (file+headline "~/org/work.org" "Tasks")
+	 "* TODO %?\nSCHEDULED: <%(org-read-date nil nil nil nil nil \"+thu\")>")
 	("r" "Reminder" entry (file+headline "~/org/todo.org" "Reminders")
 	   "* TODO %?\n  %^T")
         ("j" "Journal" entry (file+datetree "~/org/notes.org")
