@@ -123,7 +123,7 @@
 (setq compilation-scroll-output t)
 
 (add-hook 'after-init-hook '(lambda ()
-			      (org-agenda nil "t")
+			      (org-agenda nil "n")
 			      (split-window-right)
 			      (other-window 1)
 			      (elfeed)))

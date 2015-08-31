@@ -54,3 +54,14 @@
              "* %?\nEntered on %U\n  %i\n  %a")))
 ;; Reftex export
 (require 'ox-bibtex)
+
+(setq org-agenda-custom-commands
+      '(("s" "Agenda and study-related tasks"
+	 ((agenda "")
+	  (tags-todo "study")))
+	("w" "Agenda and work-related tasks"
+	 ((agenda "")
+	  (tags-todo "work")))
+	("n" "Agenda and all tasks"
+	 ((agenda "")
+	  (todo)))))
