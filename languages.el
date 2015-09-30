@@ -18,3 +18,5 @@
 (load "~/.emacs.d/languages/python.el")
 ;; Groovy (Gradle)
 (load "~/.emacs.d/languages/groovy.el")
+;; Scheme
+(load "~/.emacs.d/languages/scheme.el")

@@ -47,3 +47,5 @@ newsticker/
 .cask/
 .sx/
 .python-environments/
+/ensime/classpath_2.11.7_0.9.10-SNAPSHOT
+/bookmarks
