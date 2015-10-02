@@ -159,3 +159,6 @@
 
 ;; Disable keyboard-escape-quit
 (global-unset-key (kbd "ESC ESC ESC"))
+
+;; Perspective manager
+(global-set-key (kbd "C-x x x") 'perspmgr-open-perspective)
