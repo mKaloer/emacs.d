@@ -130,14 +130,6 @@
 (setq request-storage-directory "~/.emacs.d/misc/request") ;; Request.el
 (setq tramp-persistency-file-name "~/.emacs.d/misc/tramp") ;; TRAMP
 
-;; Startup view
-(add-hook 'after-init-hook '(lambda ()
-			      (org-agenda nil "n")
-			      (split-window-right)
-			      (other-window 1)
-			      (elfeed)))
 ;; Name perspective
-(persp-mode)
-(require 'persp-projectile)
-(persp-rename "Home")
-(persp-new "Scratch") ; Create a new perspective
+(load-file "~/.emacs.d/plugins/perspective-manager.el")
+(load-file "~/.emacs.d/perspectives.el")
