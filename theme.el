@@ -12,7 +12,10 @@
   (set-fringe-mode 0))
 (setq linum-format " %d  ")
 
-(set-default-font "SourceCodePro 12")
+(if window-system
+    (set-default-font "Source Code Pro 12")
+  (set-default-font "SourceCodePro 12"))
+
 
 (load-theme 'flatland-black t)
 ;; (add-to-list 'custom-theme-load-path "~/.emacs.d/themes/")

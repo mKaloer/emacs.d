@@ -52,11 +52,11 @@
 (defun create-tags (dir-name file-extension)
      "Create tags file."
      (interactive "DDirectory: \nsEnter file extension: ")
-     (eshell-command 
+     (eshell-command
       (format "find %s -type f -name \"*.%s\" | etags -" dir-name file-extension)))
 
 (defun create-tags-append (dir-name file-extension)
      "Append to an existing tags file."
      (interactive "DDirectory: \nsEnter file extension: ")
-     (eshell-command 
+     (eshell-command
       (format "find %s -type f -name \"*.%s\" | etags -a -" dir-name file-extension)))

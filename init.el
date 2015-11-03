@@ -50,10 +50,10 @@
 (require 'dropdown-list)
 (setq yas-prompt-functions
       '(yas-dropdown-prompt
-        yas-ido-prompt
-        yas-x-prompt
-        yas-completing-prompt
-        yas-no-prompt))
+	yas-ido-prompt
+	yas-x-prompt
+	yas-completing-prompt
+	yas-no-prompt))
 
 (setq password-cache-expiry nil)
 
@@ -95,7 +95,7 @@
 (delete-selection-mode 1)
 
 (require 'eww)
-(add-hook 'write-file-hooks 'delete-trailing-whitespace)
+(add-hook 'before-save-hook 'whitespace-cleanup)
 
 ;; Indent
 ;;(global-aggressive-indent-mode)
@@ -129,7 +129,7 @@
 (setq recentf-save-file "~/.emacs.d/misc/recentf") ;; Recentf
 (setq request-storage-directory "~/.emacs.d/misc/request") ;; Request.el
 (setq tramp-persistency-file-name "~/.emacs.d/misc/tramp") ;; TRAMP
-
+(setq multi-term-program "/bin/zsh")
 ;; Name perspective
 (load-file "~/.emacs.d/plugins/perspective-manager.el")
 (load-file "~/.emacs.d/perspectives.el")

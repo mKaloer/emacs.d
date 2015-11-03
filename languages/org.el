@@ -45,7 +45,7 @@
       '(("t" "Todo" entry (file+headline "~/org/todo.org" "Tasks")
 	 "* TODO %?\n %a")
 	("w" "Todo (Work)" entry (file+headline "~/org/work.org" "Tasks")
-	 "* TODO %?\n  %^T")
+	 "* TODO %?")
 	("W" "Todo (Work, scheduled)" entry (file+headline "~/org/work.org" "Tasks")
 	 "* TODO %?\nSCHEDULED: <%(org-read-date nil nil nil nil nil \"+thu\")>")
 	("r" "Reminder" entry (file+headline "~/org/todo.org" "Reminders")
