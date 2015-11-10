@@ -22,5 +22,7 @@
 (global-hl-line-mode 1)
 ;; Modify color
 (set-face-background 'hl-line "#222222")
+(set-face-background 'mode-line "#222222")
+(set-face-background 'mode-line "#222222")
 ;; Keep syntax highlighting
 (set-face-foreground 'highlight nil)
