@@ -14,10 +14,9 @@
 	   (file-name-nondirectory
 	    (directory-file-name (file-name-directory "/test/test/venv/"))))))))
 
-;; Ask for venv if not set
-(add-hook 'python-mode-hook (lambda ()
-			      (if (eq venv-current-name nil)
-				  (set-venv-dir))))
+(setq venv-location "~/.virtualenvs/")
+;; Show in mode line
+(setq-default mode-line-format (cons '(:exec venv-current-name) mode-line-format))
 
 ;; Jedi
 (add-hook 'python-mode-hook 'jedi:setup)
@@ -27,3 +26,6 @@
 
 ;; IPython Notebook
 (require 'ein)
+
+;; Store python env in misc folder
+(setq python-environment-directory "~/.emacs.d/misc/python-environments")

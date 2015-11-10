@@ -36,12 +36,6 @@
         "xelatex -shell-escape -interaction nonstopmode -output-directory %o %f"
         "xelatex -shell-escape -interaction nonstopmode -output-directory %o %f"))
 
-;; Make windmove work in org-mode:
-(add-hook 'org-shiftup-final-hook 'windmove-up)
-(add-hook 'org-shiftleft-final-hook 'windmove-left)
-(add-hook 'org-shiftdown-final-hook 'windmove-down)
-(add-hook 'org-shiftright-final-hook 'windmove-right)
-
 ;; Set agenda files
 (setq org-agenda-files (list "~/org"))
 (setq org-directory "~/org/")
@@ -50,9 +44,24 @@
 (setq org-capture-templates
       '(("t" "Todo" entry (file+headline "~/org/todo.org" "Tasks")
 	 "* TODO %?\n %a")
+	("w" "Todo (Work)" entry (file+headline "~/org/work.org" "Tasks")
+	 "* TODO %?\n  %^T")
+	("W" "Todo (Work, scheduled)" entry (file+headline "~/org/work.org" "Tasks")
+	 "* TODO %?\nSCHEDULED: <%(org-read-date nil nil nil nil nil \"+thu\")>")
 	("r" "Reminder" entry (file+headline "~/org/todo.org" "Reminders")
 	   "* TODO %?\n  %^T")
         ("j" "Journal" entry (file+datetree "~/org/notes.org")
              "* %?\nEntered on %U\n  %i\n  %a")))
 ;; Reftex export
 (require 'ox-bibtex)
+
+(setq org-agenda-custom-commands
+      '(("s" "Agenda and study-related tasks"
+	 ((agenda "")
+	  (tags-todo "study")))
+	("w" "Agenda and work-related tasks"
+	 ((agenda "")
+	  (tags-todo "work")))
+	("n" "Agenda and all tasks"
+	 ((agenda "")
+	  (todo)))))

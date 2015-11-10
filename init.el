@@ -1,3 +1,5 @@
+(package-initialize)
+
 (setq inhibit-splash-screen t)
 
 (load-file "~/.emacs.d/packages.el")
@@ -24,10 +26,6 @@
 (require 'fuzzy-match)
 (require 'hexrgb)
 (require 'icicles)
-
-;; Jump
-(load-file "~/.emacs.d/plugins/jumping.el")
-(setq jump-places (jmp-file-read "~/.emacs.d/jump_dirs.lsp"))
 
 ;; Find-line-in-buffer
 (load-file "~/.emacs.d/plugins/find-line-in-buffer.el")
@@ -82,7 +80,6 @@
 
 ;; SSH with sudo
 (set-default 'tramp-default-proxies-alist (quote ((".*" "\\`root\\'" "/ssh:%h:"))))
-
 ;; Disable mouse-wheel scrolling
 (when (display-graphic-p)
   (mouse-wheel-mode -1))
@@ -122,12 +119,20 @@
 ;; Auto-scroll compilations
 (setq compilation-scroll-output t)
 
+;; Store various data files in misc folder
+(setq bookmark-default-file "~/.emacs.d/misc/bookmarks") ;; bookmarks
+(setq mc/list-file "~/.emacs.d/misc/mc-lists.el") ;; Multiple-cursors
+(setq ac-comphist-file  "~/.emacs.d/misc/ac-comphist.dat") ;; Auto-complete
+(setq ido-save-directory-list-file "~/.emacs.d/misc/ido.last") ;; Ido mode
+(setq save-place-file "~/.emacs.d/misc/saved-places") ;; Saved places
+(setq projectile-known-projects-file "~/.emacs.d/misc/projectile-bookmarks.eld")
+(setq recentf-save-file "~/.emacs.d/misc/recentf") ;; Recentf
+(setq request-storage-directory "~/.emacs.d/misc/request") ;; Request.el
+(setq tramp-persistency-file-name "~/.emacs.d/misc/tramp") ;; TRAMP
+
+;; Name perspective
+(load-file "~/.emacs.d/plugins/perspective-manager.el")
+(load-file "~/.emacs.d/perspectives.el")
+
 ;; Magit default color
 (setq magit-log-arguments '("--graph" "--color" "--decorate"))
-
-(require 'multi-term)
-(setq multi-term-program "/bin/zsh")
-(setq system-uses-terminfo nil)
-
-(add-hook 'after-init-hook '(lambda ()
-			      (find-file "~/Desktop/cachenotes.org")))

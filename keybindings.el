@@ -16,7 +16,7 @@
 (define-key input-decode-map "\e[1;9D" [M-left])
 
 ;; Hippie-expand on M-S-<spc>
-(global-set-key (kbd "M-SPC") 'hippie-expand)
+(global-set-key (kbd "<f2>") 'hippie-expand)
 
 ;; Recent files
 (global-set-key "\C-x\ \C-r" 'helm-recentf)
@@ -44,27 +44,12 @@
 (global-set-key (kbd "C-x æ") 'mc/mark-all-like-this)
 (global-set-key (kbd "C-x ø") 'mc/mark-pop)
 
-
-;; Move windows with arrow keys
-(when (fboundp 'windmove-default-keybindings)
-  (windmove-default-keybindings))
-
 ;; Windmove in tmux
-(global-set-key "\M-[1;2A" 'windmove-up)
-(global-set-key "\M-[1;2B" 'windmove-down)
-(global-set-key "\M-[1;2C" 'windmove-right)
-(global-set-key "\M-[1;2D" 'windmove-left)
-;; Windmove in Cocoa-GUI
-(global-set-key (kbd "M-<up>") 'windmove-up)
-(global-set-key (kbd "M-<down>") 'windmove-down)
-(global-set-key (kbd "M-<right>") 'windmove-right)
-(global-set-key (kbd "M-<left>") 'windmove-left)
+(global-set-key (kbd "<f1> <up>") 'windmove-up)
+(global-set-key (kbd "<f1> <down>") 'windmove-down)
+(global-set-key (kbd "<f1> <right>") 'windmove-right)
+(global-set-key (kbd "<f1> <left>") 'windmove-left)
 
-;; Make windmove work in org-mode:
-(add-hook 'org-shiftup-final-hook 'windmove-up)
-(add-hook 'org-shiftleft-final-hook 'windmove-left)
-(add-hook 'org-shiftdown-final-hook 'windmove-down)
-(add-hook 'org-shiftright-final-hook 'windmove-right)
 ;; Open agenda v
 (global-set-key (kbd "C-x o") 'org-agenda)
 
@@ -171,3 +156,9 @@
 ;; Ace jump
 (define-key global-map (kbd "C-c SPC") 'ace-jump-mode)
 (global-set-key (kbd "C-c C-s") 'helm-swoop)
+
+;; Disable keyboard-escape-quit
+(global-unset-key (kbd "ESC ESC ESC"))
+
+;; Perspective manager
+(global-set-key (kbd "C-x x x") 'perspmgr-open-perspective)
