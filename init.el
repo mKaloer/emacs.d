@@ -122,8 +122,12 @@
 ;; Auto-scroll compilations
 (setq compilation-scroll-output t)
 
+;; Magit default color
+(setq magit-log-arguments '("--graph" "--color" "--decorate"))
+
+(require 'multi-term)
+(setq multi-term-program "/bin/zsh")
+(setq system-uses-terminfo nil)
+
 (add-hook 'after-init-hook '(lambda ()
-			      (org-agenda nil "t")
-			      (split-window-right)
-			      (other-window 1)
-			      (elfeed)))
+			      (find-file "~/Desktop/cachenotes.org")))
