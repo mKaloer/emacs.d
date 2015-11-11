@@ -133,3 +133,6 @@
 ;; Name perspective
 (load-file "~/.emacs.d/plugins/perspective-manager.el")
 (load-file "~/.emacs.d/perspectives.el")
+
+;; Magit default color
+(setq magit-log-arguments '("--graph" "--color" "--decorate"))
