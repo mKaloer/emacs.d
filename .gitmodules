@@ -1,0 +1,3 @@
+[submodule "plugins/use-package"]
+	path = plugins/use-package
+	url = https://github.com/jwiegley/use-package.git
