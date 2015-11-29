@@ -86,6 +86,7 @@
 
 
 ;; Easy window resizing
+(global-set-key (kbd "C-c ;") 'resize-window)
 (global-set-key (kbd "M-<left>") 'shrink-window-horizontally)
 (global-set-key (kbd "M-<right>") 'enlarge-window-horizontally)
 (global-set-key (kbd "M-<down>") 'shrink-window)
@@ -118,11 +119,11 @@
 (defun autopairs-ret (arg)
       (interactive "P")
       (let (pair)
-        (dolist (pair skeleton-pair-alist)
-          (when (eq (char-after) (car (last pair)))
-            (save-excursion (newline-and-indent))))
-        (newline arg)
-        (indent-according-to-mode)))
+	(dolist (pair skeleton-pair-alist)
+	  (when (eq (char-after) (car (last pair)))
+	    (save-excursion (newline-and-indent))))
+	(newline arg)
+	(indent-according-to-mode)))
 (global-set-key (kbd "RET") 'autopairs-ret)
 
 

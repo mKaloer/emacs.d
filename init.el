@@ -72,6 +72,9 @@
 (use-package phi-search
   :ensure t)
 
+(use-package 'resize-window
+  :ensure t)
+
 (load "~/.emacs.d/theme.el")
 (load "~/.emacs.d/languages.el")
 (load "~/.emacs.d/functions.el")
