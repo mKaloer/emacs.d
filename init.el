@@ -23,6 +23,9 @@
   :ensure t
   :config (ido-vertical-mode 1))
 
+(use-package pandoc-mode
+  :ensure t)
+
 ;; icicles (fuzzy completion)
 (require 'apropos)
 (use-package fuzzy-match
