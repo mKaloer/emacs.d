@@ -1,6 +1,13 @@
 (require 'multiple-cursors)
 (require 'expand-region)
 
+;; Disabel right meta key os GUI
+(if (display-graphic-p)
+    (progn
+      (setq mac-option-key-is-meta t)
+      (setq mac-right-option-modifier nil)))
+
+
 ;; Avoid C-z termination
 (global-unset-key (kbd "C-z"))
 ;; Map S-up terminal input to to S-up
@@ -14,6 +21,7 @@
 (define-key input-decode-map "\e[1;9B" [M-down])
 (define-key input-decode-map "\e[1;9C" [M-right])
 (define-key input-decode-map "\e[1;9D" [M-left])
+(define-key input-decode-map "\e[46;5U" (kbd "C-."))
 
 ;; Hippie-expand on M-S-<spc>
 (global-set-key (kbd "<f2>") 'hippie-expand)
@@ -103,29 +111,25 @@
 ;; Set Yasnippet's key binding to shift+tab
 (define-key yas-minor-mode-map (kbd "<backtab>") 'yas-expand)
 
-;; Auto-completion
-(define-key ac-completing-map (kbd "RET") nil)
-(define-key ac-completing-map [return] nil)
-(ac-set-trigger-key "TAB")
-(define-key ac-complete-mode-map "\C-n" 'ac-next)
-(define-key ac-complete-mode-map "\C-p" 'ac-previous)
-
+;; Auto-completion (Company)
+(global-set-key (kbd "C-.") 'company-complete)
 ;; Make return move cursor to line between pairs
 (setq skeleton-pair-alist
       '((?\( _ ?\))
 	(?[  _ ?])
 	(?{  _ ?})
 	(?\" _ ?\")))
-(defun autopairs-ret (arg)
-      (interactive "P")
-      (let (pair)
-	(dolist (pair skeleton-pair-alist)
-	  (when (eq (char-after) (car (last pair)))
-	    (save-excursion (newline-and-indent))))
-	(newline arg)
-	(indent-according-to-mode)))
-(global-set-key (kbd "RET") 'autopairs-ret)
+;; (defun autopairs-ret (arg)
+;;       (interactive "P")
+;;       (let (pair)
+;;	(dolist (pair skeleton-pair-alist)
+;;	  (when (eq (char-after) (car (last pair)))
+;;	    (save-excursion (newline-and-indent))))
+;;	(newline arg)
+;;	(indent-according-to-mode)))
+;; (global-set-key (kbd "RET") 'autopairs-ret)
 
+(global-set-key (kbd "RET") 'newline-and-indent)
 
 ;; Org-capture
 (global-set-key (kbd "C-c r") 'org-capture)
@@ -156,7 +160,9 @@
 
 ;; Ace jump
 (define-key global-map (kbd "C-c SPC") 'ace-jump-mode)
-(global-set-key (kbd "C-c C-s") 'helm-swoop)
+;; Search
+(global-set-key (kbd "C-c C-s") 'isearch-forward)
+(global-set-key (kbd "C-s") 'swiper)
 
 ;; Disable keyboard-escape-quit
 (global-unset-key (kbd "ESC ESC ESC"))

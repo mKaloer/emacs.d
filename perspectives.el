@@ -19,6 +19,23 @@
 		     (find-file "~/Documents/Studie/SW7/AAUP7/report/master.tex")
 		     (magit-status-internal "~/Documents/Studie/SW7/AAUP7/"))))
 
+;; AAU P7 prototype
+(add-to-list
+ 'perspmgr-perspectives
+ (cons "P7 Prototype" (lambda ()
+		     (find-file "~/Documents/Studie/SW7/AAUP7/prototype/")
+		     (magit-status-internal "~/Documents/Studie/SW7/AAUP7/"))))
+
+;; Work
+(add-to-list
+ 'perspmgr-perspectives
+ (cons "Work" (lambda ()
+		(dired "~/Tradeshift/Backend-Conversions/")
+		(split-window-below)
+		(org-agenda nil "w")
+		(magit-status-internal "~/Tradeshift/Backend-Conversions//"))))
+
+
 (setq perspmgr-initial-perspectives (list "Home" "Scratch"))
 (persp-mode)
 (require 'persp-projectile)

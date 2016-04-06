@@ -23,6 +23,9 @@
   :ensure t
   :config (ido-vertical-mode 1))
 
+(use-package swiper-helm
+  :ensure t)
+
 (use-package pandoc-mode
   :ensure t)
 
@@ -75,15 +78,19 @@
 (use-package phi-search
   :ensure t)
 
-(use-package 'resize-window
+(use-package resize-window
   :ensure t)
 
 (load "~/.emacs.d/theme.el")
 (load "~/.emacs.d/languages.el")
 (load "~/.emacs.d/functions.el")
-(load "~/.emacs.d/auto-complete.el")
+;(load "~/.emacs.d/auto-complete.el")
 (load "~/.emacs.d/keybindings.el")
 (load "~/.emacs.d/helm-config.el")
+
+(use-package company
+  :ensure t
+  :config (global-company-mode))
 
 (use-package dirtree
   :ensure f)
@@ -134,9 +141,6 @@
 (setq custom-file "~/.emacs.d/custom.el")
 (load custom-file)
 
-;; Autocomplete mode
-(auto-complete-mode 1)
-
 ;; Enable Projectile globally
 (projectile-global-mode)
 
@@ -157,3 +161,13 @@
 ;; Name perspective
 (load-file "~/.emacs.d/plugins/perspective-manager.el")
 (load-file "~/.emacs.d/perspectives.el")
+;; Always use spaces
+(setq indent-tabs-mode nil)
+(put 'downcase-region 'disabled nil)
+
+(use-package evil-numbers
+  :ensure t)
+(load "~/.emacs.d/plugins/fireplace")
+
+;:; Show ediff control frame in existing frame
+ (setq ediff-window-setup-function 'ediff-setup-windows-plain)
