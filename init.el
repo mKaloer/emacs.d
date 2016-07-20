@@ -171,3 +171,5 @@
 
 ;:; Show ediff control frame in existing frame
  (setq ediff-window-setup-function 'ediff-setup-windows-plain)
+;; Title capitalization
+(load-file "~/.emacs.d/plugins/title-capitalization.el")
