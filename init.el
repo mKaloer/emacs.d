@@ -58,6 +58,8 @@
 (use-package magit
   :ensure t
   :config (setq magit-last-seen-setup-instructions "1.4.0"))
+(use-package git-timemachine
+  :ensure t)
 
 ;; Snippets
 (use-package dropdown-list)
@@ -170,6 +172,7 @@
 (load "~/.emacs.d/plugins/fireplace")
 
 ;:; Show ediff control frame in existing frame
- (setq ediff-window-setup-function 'ediff-setup-windows-plain)
+(setq ediff-window-setup-function 'ediff-setup-windows-plain)
+
 ;; Title capitalization
 (load-file "~/.emacs.d/plugins/title-capitalization.el")

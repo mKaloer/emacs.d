@@ -113,6 +113,7 @@
 
 ;; Auto-completion (Company)
 (global-set-key (kbd "C-.") 'company-complete)
+
 ;; Make return move cursor to line between pairs
 (setq skeleton-pair-alist
       '((?\( _ ?\))

@@ -29,4 +29,3 @@
 
 ;; Store python env in misc folder
 (setq python-environment-directory "~/.emacs.d/misc/python-environments")
-
