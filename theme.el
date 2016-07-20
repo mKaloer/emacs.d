@@ -26,6 +26,8 @@
 (set-face-background 'hl-line "#2A2A2A2A")
 (set-face-background 'mode-line "#2A2A2A2A")
 (set-face-foreground 'linum "#AAAAAAAA")
+;; Make green string color darker
+(set-face-foreground 'font-lock-string-face "#a8CC60")
 ;; Keep syntax highlighting
 (set-face-foreground 'highlight nil)
 (if (display-graphic-p)
