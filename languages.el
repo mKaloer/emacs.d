@@ -20,3 +20,5 @@
 (load "~/.emacs.d/languages/groovy.el")
 ;; Scheme
 (load "~/.emacs.d/languages/scheme.el")
+;; Golang
+(load "~/.emacs.d/languages/golang.el")
