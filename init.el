@@ -176,3 +176,4 @@
 
 ;; Title capitalization
 (load-file "~/.emacs.d/plugins/title-capitalization.el")
+(toggle-scroll-bar -1)
