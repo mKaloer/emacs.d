@@ -29,3 +29,7 @@
 
 ;; Store python env in misc folder
 (setq python-environment-directory "~/.emacs.d/misc/python-environments")
+
+(use-package py-isort
+  :ensure t
+  :config (add-hook 'before-save-hook 'py-isort-before-save))
