@@ -14,9 +14,9 @@
 (use-package recentf
   :ensure t
   :config (progn
-	    (recentf-mode 1)
-	    (setq recentf-auto-cleanup 'never) ;; disable before we start recentf!
-	    (setq recentf-max-menu-items 25)))
+		(recentf-mode 1)
+		(setq recentf-auto-cleanup 'never) ;; disable before we start recentf!
+		(setq recentf-max-menu-items 25)))
 ;; Set file extension priority for ido-find-file
 (setq ido-file-extensions-order '(".org" ".tex" ".py" ".emacs" ".xml"))
 (use-package ido-vertical-mode
@@ -66,14 +66,14 @@
 (use-package yasnippet
   :ensure t
   :config (progn
-	    (yas-global-mode 1)
-	    (setq yas-snippet-dirs (append yas-snippet-dirs '("~/.emacs.d/snippets")))
-	    (setq yas-prompt-functions
+		(yas-global-mode 1)
+		(setq yas-snippet-dirs (append yas-snippet-dirs '("~/.emacs.d/snippets")))
+		(setq yas-prompt-functions
 		  '(yas-dropdown-prompt
-		    yas-ido-prompt
-		    yas-x-prompt
-		    yas-completing-prompt
-		    yas-no-prompt))))
+			yas-ido-prompt
+			yas-x-prompt
+			yas-completing-prompt
+			yas-no-prompt))))
 
 (setq password-cache-expiry nil)
 
@@ -103,9 +103,9 @@
 ;; Save backup files in .saves dir
 (setq backup-directory-alist `(("." . "~/.saves")))
 (setq auto-save-file-name-transforms
-      `((".*" ,"~/.saves/\\1[2.]" t)))
+	  `((".*" ,"~/.saves/\\1[2.]" t)))
 (setq backup-directory-alist
-      `((".*" . ,"~/.saves")))
+	  `((".*" . ,"~/.saves")))
 
 ;; SSH with sudo
 (set-default 'tramp-default-proxies-alist (quote ((".*" "\\`root\\'" "/ssh:%h:"))))
@@ -165,6 +165,8 @@
 (load-file "~/.emacs.d/perspectives.el")
 ;; Always use spaces
 (setq indent-tabs-mode nil)
+;; In case of tabs, use width 4
+(setq tab-width 4)
 (put 'downcase-region 'disabled nil)
 
 (use-package evil-numbers

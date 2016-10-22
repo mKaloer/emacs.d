@@ -170,3 +170,6 @@
 
 ;; Perspective manager
 (global-set-key (kbd "C-x x x") 'perspmgr-open-perspective)
+
+;; Fill paragraph
+(global-set-key (kbd "C-c l") 'fill-paragraph)
