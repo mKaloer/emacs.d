@@ -177,3 +177,10 @@
 ;; Title capitalization
 (load-file "~/.emacs.d/plugins/title-capitalization.el")
 (toggle-scroll-bar -1)
+
+;; Emojis
+(use-package emojify
+  :ensure t
+  :config (progn
+		(global-emojify-mode)
+		(emojify-set-emoji-styles '(unicode github))))
