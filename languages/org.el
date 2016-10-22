@@ -24,17 +24,17 @@
 (add-hook 'org-mode-hook (lambda () (visual-line-mode 1)))
 
 (setf org-latex-default-packages-alist
-        (remove '("AUTO" "inputenc" t) org-latex-default-packages-alist))
+	(remove '("AUTO" "inputenc" t) org-latex-default-packages-alist))
 
 ;; org to latex customisations, -shell-escape needed for minted
 (setq org-latex-to-pdf-process          ; for regular export
       '("xelatex -shell-escape -interaction nonstopmode -output-directory %o %f"
-        "xelatex -shell-escape -interaction nonstopmode -output-directory %o %f"
-        "xelatex -shell-escape -interaction nonstopmode -output-directory %o %f")
+	"xelatex -shell-escape -interaction nonstopmode -output-directory %o %f"
+	"xelatex -shell-escape -interaction nonstopmode -output-directory %o %f")
       org-e-latex-pdf-process           ; for experimental org-export
       '("xelatex -shell-escape -interaction nonstopmode -output-directory %o %f"
-        "xelatex -shell-escape -interaction nonstopmode -output-directory %o %f"
-        "xelatex -shell-escape -interaction nonstopmode -output-directory %o %f"))
+	"xelatex -shell-escape -interaction nonstopmode -output-directory %o %f"
+	"xelatex -shell-escape -interaction nonstopmode -output-directory %o %f"))
 
 ;; Set agenda files
 (setq org-agenda-files (list "~/org"))
@@ -45,13 +45,13 @@
       '(("t" "Todo" entry (file+headline "~/org/todo.org" "Tasks")
 	 "* TODO %?\n %a")
 	("w" "Todo (Work)" entry (file+headline "~/org/work.org" "Tasks")
-	 "* TODO %?")
+	 "* TODO %?\n %a")
 	("W" "Todo (Work, scheduled)" entry (file+headline "~/org/work.org" "Tasks")
 	 "* TODO %?\nSCHEDULED: <%(org-read-date nil nil nil nil nil \"+thu\")>")
 	("r" "Reminder" entry (file+headline "~/org/todo.org" "Reminders")
 	   "* TODO %?\n  %^T")
-        ("j" "Journal" entry (file+datetree "~/org/notes.org")
-             "* %?\nEntered on %U\n  %i\n  %a")))
+	("j" "Journal" entry (file+datetree "~/org/notes.org")
+	     "* %?\nEntered on %U\n  %i\n  %a")))
 ;; Reftex export
 (require 'ox-bibtex)
 

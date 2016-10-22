@@ -30,6 +30,14 @@
 ;; Store python env in misc folder
 (setq python-environment-directory "~/.emacs.d/misc/python-environments")
 
+(defun isort-before-save-matplotlib
+    (if (save-excursion
+	  (goto-char (point-min))
+	  (search-forward "matplotlib.use" nil t))
+	2
+	4)
+  )
+
 (use-package py-isort
   :ensure t
-  :config (add-hook 'before-save-hook 'py-isort-before-save))
+  );:config (add-hook 'before-save-hook 'py-isort-before-save))
