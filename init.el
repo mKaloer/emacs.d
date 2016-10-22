@@ -29,6 +29,9 @@
 (use-package pandoc-mode
   :ensure t)
 
+(use-package elfeed
+  :ensure f)
+
 ;; icicles (fuzzy completion)
 (require 'apropos)
 (use-package fuzzy-match

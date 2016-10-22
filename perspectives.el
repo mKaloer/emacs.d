@@ -3,9 +3,11 @@
  'perspmgr-perspectives
  (cons "Home" (lambda ()
 		(org-agenda nil "n")
-		(split-window-right)
-		(other-window 1)
-		(elfeed))))
+		(if (fboundp 'elfeed)
+		    (progn
+		      (split-window-right)
+		      (other-window 1)
+		      (elfeed))))))
 
 ;; Scratch perspective
 (add-to-list
@@ -38,4 +40,4 @@
 
 (setq perspmgr-initial-perspectives (list "Home" "Scratch"))
 (persp-mode)
-(require 'persp-projectile)
+;(require 'persp-projectile)
