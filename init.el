@@ -23,6 +23,12 @@
   :ensure t
   :config (ido-vertical-mode 1))
 
+(use-package ivy
+  :config (ivy-mode 1))
+
+(use-package swiper
+  :ensure t)
+
 (use-package swiper-helm
   :ensure t)
 
@@ -116,6 +122,8 @@
 (when (display-graphic-p)
   (mouse-wheel-mode -1))
 
+(setenv "LANG" "en_US.UTF-8")
+
 ;; Clipboard
 (use-package pbcopy
   :ensure t
@@ -189,3 +197,7 @@
   :config (progn
 		(global-emojify-mode)
 		(emojify-set-emoji-styles '(unicode github))))
+
+(use-package editorconfig
+  :ensure t
+  :config (editorconfig-mode 1))

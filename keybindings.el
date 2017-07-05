@@ -99,6 +99,10 @@
 (global-set-key (kbd "M-<right>") 'enlarge-window-horizontally)
 (global-set-key (kbd "M-<down>") 'shrink-window)
 (global-set-key (kbd "M-<up>") 'enlarge-window)
+(global-set-key (kbd "M-S-<left>") (lambda () (interactive) (shrink-window-horizontally 5)))
+(global-set-key (kbd "M-S-<right>") (lambda () (interactive) (enlarge-window-horizontally 5)))
+(global-set-key (kbd "M-S-<down>") (lambda () (interactive (shrink-window 5))))
+(global-set-key (kbd "M-S-<up>") (lambda () (interactive) (enlarge-window 5)))
 ;; For terminal
 (global-set-key (kbd "ESC <left>") 'shrink-window-horizontally)
 (global-set-key (kbd "ESC <right>") 'enlarge-window-horizontally)
@@ -167,6 +171,7 @@
 
 ;; Disable keyboard-escape-quit
 (global-unset-key (kbd "ESC ESC ESC"))
+(global-unset-key (kbd "C-x C-c"))
 
 ;; Perspective manager
 (global-set-key (kbd "C-x x x") 'perspmgr-open-perspective)

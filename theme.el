@@ -13,11 +13,10 @@
 (setq linum-format " %d  ")
 
 (if window-system
-    (set-default-font "Source Code Pro 12")
-  (set-default-font "SourceCodePro 12"))
+    (set-fontset-font t 'hangul (font-spec :name "SourceCodePro")))
 
 
-;; (add-to-list 'custom-theme-load-path "~/.emacs.d/themes/")
+(add-to-list 'custom-theme-load-path "~/.emacs.d/themes/")
 (load-theme 'atom-dark t)
 
 ;; Highlight current line

@@ -53,7 +53,7 @@
 	("j" "Journal" entry (file+datetree "~/org/notes.org")
 	     "* %?\nEntered on %U\n  %i\n  %a")))
 ;; Reftex export
-(require 'ox-bibtex)
+; (require 'ox-bibtex)
 
 (setq org-agenda-custom-commands
       '(("s" "Agenda and study-related tasks"

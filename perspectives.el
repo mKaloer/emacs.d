@@ -39,5 +39,6 @@
 
 
 (setq perspmgr-initial-perspectives (list "Home" "Scratch"))
-(persp-mode)
+(use-package persp-mode
+  :ensure t)
 ;(require 'persp-projectile)

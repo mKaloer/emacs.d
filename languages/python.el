@@ -1,4 +1,6 @@
-(require 'virtualenvwrapper)
+(use-package virtualenvwrapper
+  :ensure t
+  )
 (venv-initialize-interactive-shells) ;; Interactive shell support
 (venv-initialize-eshell) ;; Eshell support
 
