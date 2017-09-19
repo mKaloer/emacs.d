@@ -3,7 +3,8 @@
 ;; (require 'org-latex)
 
 ;; Autocomplete for orgmode
-(require 'org-ac)
+(use-package org-ac
+  :ensure t)
 (org-ac/config-default)
 
 (setq org-completion-use-ido t)
@@ -18,7 +19,8 @@
 (setq org-src-fontify-natively t)
 (setq org-src-tab-acts-natively t)
 
-(require 'org-bullets)
+(use-package org-bullets
+  :ensure t)
 (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
 (add-hook 'org-mode-hook (lambda () (org-indent-mode 1)))
 (add-hook 'org-mode-hook (lambda () (visual-line-mode 1)))

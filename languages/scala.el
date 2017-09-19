@@ -1,3 +1,5 @@
+(use-package ensime
+  :ensure t)
 (require 'ensime)
 ;; This step causes the ensime-mode to be started whenever
 ;; scala-mode is started for a buffer.

@@ -6,13 +6,14 @@
  "/usr/texbin" ":"
 
 (getenv "PATH")))
-(require 'tex)
 ;; LaTeX word wrap
 (add-hook 'LaTeX-mode-hook 'visual-line-mode)
 ;; Spell check
 (add-hook 'LaTeX-mode-hook 'flyspell-mode)
 (add-hook 'LaTeX-mode-hook 'LaTeX-math-mode)
 
+(use-package makefile-runner
+  :ensure t)
 (load "~/.emacs.d/plugins/latex-makefile.el")
 (require 'latex-makefile-mode)
 (add-hook 'LaTeX-mode-hook 'latex-makefile-mode)

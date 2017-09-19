@@ -7,8 +7,11 @@
 (add-to-list 'load-path "~/.emacs.d/plugins/")
 
 ;; Use $PATH exec-files.
-(when (memq window-system '(mac ns))
-  (exec-path-from-shell-initialize))
+(use-package exec-path-from-shell
+  :ensure t
+  :config (lambda
+	    (when (memq window-system '(mac ns))
+	      (exec-path-from-shell-initialize))))
 
 ; Recent files
 (use-package recentf
@@ -149,12 +152,16 @@
   :config (setq-default save-place t))
 
 ;; Start emacs server
+(use-package server
+  :ensure t)
 (unless (server-running-p) (server-start))
 
 (setq custom-file "~/.emacs.d/custom.el")
 (load custom-file)
 
 ;; Enable Projectile globally
+(use-package projectile
+  :ensure t)
 (projectile-global-mode)
 
 ;; Auto-scroll compilations

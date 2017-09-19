@@ -3,8 +3,10 @@
 
 ;; Always trust themes
 (setq custom-safe-themes t)
-
-(sml/setup)
+(use-package smart-mode-line
+  :ensure t
+  :config (lambda
+	    (sml/setup)))
 
 ;; Always line-numbers
 (global-linum-mode t)

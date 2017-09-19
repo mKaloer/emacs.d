@@ -1,13 +1,18 @@
 ;; Rinari (Ruby on Rails)
 (require 'ido)
 (ido-mode t)
+(use-package rinari
+  :ensure t)
 (require 'rinari)
+(use-package rvm
+  :ensure t)
 (require 'rvm)
 (rvm-use-default)
 
 ;; Causes Emacs to fail load on startup.
 ;; (load "~/.emacs.d/plugins/nxhtml/autostart.el")
-
+(use-package ruby-electric
+  :ensure t)
 (add-hook 'ruby-mode-hook (lambda () (ruby-electric-mode)))
 
 (setq ruby-insert-encoding-magic-comment nil)
@@ -29,6 +34,8 @@
 ;; Ruby-electric
 (require 'ruby-electric)
 
+(use-package yaml-mode
+  :ensure t)
 ;; Yaml-mode
 (require 'yaml-mode)
     (add-to-list 'auto-mode-alist '("\\.yml$" . yaml-mode))

@@ -1,5 +1,7 @@
-(require 'multiple-cursors)
-(require 'expand-region)
+(use-package multiple-cursors
+  :ensure t)
+(use-package expand-region
+  :ensure t)
 
 ;; Disabel right meta key os GUI
 (if (display-graphic-p)

@@ -27,7 +27,8 @@
 (add-hook 'python-mode-hook 'flycheck-mode)
 
 ;; IPython Notebook
-(require 'ein)
+(use-package ein
+  :ensure t)
 
 ;; Store python env in misc folder
 (setq python-environment-directory "~/.emacs.d/misc/python-environments")
